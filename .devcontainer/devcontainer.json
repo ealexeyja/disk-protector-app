@@ -10,5 +10,9 @@
       ]
     }
   },
-  "remoteUser": "root"
+  "remoteUser": "root",
+  "postCreateCommand": "dotnet restore && dotnet build",
+  "settings": {
+    "dotnet.defaultSolution": "DiskProtectorApp.sln"
+  }
 }

@@ -1,0 +1,22 @@
+{
+  "runtimeOptions": {
+    "tfm": "net8.0",
+    "includedFrameworks": [
+      {
+        "name": "Microsoft.NETCore.App",
+        "version": "8.0.19"
+      },
+      {
+        "name": "Microsoft.WindowsDesktop.App",
+        "version": "8.0.19"
+      }
+    ],
+    "configProperties": {
+      "System.Windows.Forms.ApplicationVisualStyles": true,
+      "System.Windows.Forms.ApplicationUseWaitCursor": false,
+      "System.Windows.Forms.ApplicationHighDpiMode": "SystemAware",
+      "System.Reflection.Metadata.MetadataUpdater.IsSupported": false,
+      "System.Runtime.Serialization.EnableUnsafeBinaryFormatterSerialization": true
+    }
+  }
+}

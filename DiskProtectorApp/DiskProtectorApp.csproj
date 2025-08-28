@@ -2,10 +2,23 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
+    <!-- CAMBIA ESTA LÍNEA: debe tener -windows -->
     <TargetFramework>net8.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    
+    <!-- Configuración para publicación -->
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <SelfContained>true</SelfContained>
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
+    
+    <!-- Para evitar otros errores -->
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
   </PropertyGroup>
+
+  <ItemGroup>
+    <SupportedPlatform Include="windows" />
+  </ItemGroup>
 
 </Project>
