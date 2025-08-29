@@ -1,0 +1,48 @@
+name: Build and Release
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '8.0.x'
+
+    - name: Build application
+      run: |
+        cd DiskProtectorApp
+        dotnet publish -c Release -r win-x64 --self-contained false /p:PublishSingleFile=true
+
+    - name: Create Release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: DiskProtectorApp/bin/Release/net8.0-windows/win-x64/publish/DiskProtectorApp.exe
+        body: |
+          🛡️ Disk Protector App - Release Automático
+          
+          ## Características:
+          - ✅ Protección contra escritura accidental
+          - ✅ Detección automática de unidad del sistema
+          - ✅ Interfaz intuitiva con colores e iconos
+          - ✅ Verificación de permisos de administrador
+          
+          ## Instrucciones:
+          1. Ejecutar como Administrador
+          2. Seleccionar unidades a proteger/desproteger
+          3. La unidad del sistema aparece en amarillo (no modificable)
+          
+          ⚠️ Siempre ejecutar como Administrador
+        draft: false
+        prerelease: false
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
