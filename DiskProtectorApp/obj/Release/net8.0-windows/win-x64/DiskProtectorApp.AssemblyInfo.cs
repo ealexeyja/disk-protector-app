@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DiskProtectorApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+46be1723671d1fb9c1d3e56e9d5f3bad3d5cbd8c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c21ed9822153f4a3ea8d00e9500891579b85cfda")]
 [assembly: System.Reflection.AssemblyProductAttribute("DiskProtectorApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DiskProtectorApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

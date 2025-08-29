@@ -52,6 +52,7 @@ namespace DiskProtectorApp
             this.listViewDrives.TabIndex = 0;
             this.listViewDrives.UseCompatibleStateImageBehavior = false;
             this.listViewDrives.View = System.Windows.Forms.View.Details;
+            this.listViewDrives.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.listViewDrives_ItemSelectionChanged);
             
             // columnHeader1
             this.columnHeader1.Text = "Unidad";
@@ -118,6 +119,7 @@ namespace DiskProtectorApp
             this.Controls.Add(this.listViewDrives);
             this.Name = "MainForm";
             this.Text = "Protector de Discos Internos";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
         }
     }

@@ -1,20 +1,17 @@
-🎯 DISK PROTECTOR APP - INSTRUCCIONES
+🎯 DISK PROTECTOR APP - v2.0.0
 
-INSTRUCCIONES DE INSTALACIÓN:
-1. Extraer TODOS los archivos a una carpeta
-2. Hacer clic derecho en "DiskProtectorApp.exe"
-3. Seleccionar "Ejecutar como administrador"
-4. Seleccionar los discos internos a proteger
-5. Hacer clic en "Proteger"
+NOVEDADES EN ESTA VERSIÓN:
+- ✅ Mejor manejo de permisos de administrador
+- ✅ Detección automática de unidad del sistema Windows  
+- ✅ Bloqueo de modificación en unidad del sistema
+- ✅ Interfaz mejorada con colores e iconos
+- ✅ Corrección de errores al desproteger unidades
+- ✅ Verificación de permisos al iniciar la aplicación
 
-⚠️ IMPORTANTE:
-- Ejecutar SIEMPRE como Administrador
-- La aplicación solo protege discos internos (no USB)
-- Los administradores siempre tienen acceso completo
+INSTRUCCIONES:
+1. Ejecutar "DiskProtectorApp.exe" como Administrador
+2. La unidad del sistema se muestra en amarillo (no modificable)
+3. Seleccionar unidades a proteger/desproteger
+4. Usar los botones correspondientes
 
-🔄 Para desproteger:
-1. Ejecutar como administrador
-2. Seleccionar los discos protegidos
-3. Hacer clic en "Desproteger"
-
-📧 Soporte: [tu-email]@ejemplo.com
+⚠️ IMPORTANTE: Siempre ejecutar como Administrador

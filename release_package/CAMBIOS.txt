@@ -1,6 +1,0 @@
-VERSIÓN 1.0.0 - Primera release
-================================
-- Protección de discos internos contra escritura
-- Interfaz gráfica fácil de usar
-- Soporte para Windows 10/11
-- Compilación auto-contenida (no necesita .NET instalado)
