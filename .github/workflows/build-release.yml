@@ -12,6 +12,8 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
 
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
@@ -23,25 +25,32 @@ jobs:
         cd DiskProtectorApp
         dotnet publish -c Release -r win-x64 --self-contained false /p:PublishSingleFile=true
 
+    - name: Get release notes from commit messages
+      id: get_release_notes
+      run: |
+        # Obtener mensajes de commit desde el último tag
+        LATEST_TAG=$(git describe --tags --abbrev=0)
+        RELEASE_NOTES=$(git log --oneline --pretty=format:"- %s" $LATEST_TAG..HEAD)
+        echo "RELEASE_NOTES<<EOF" >> $GITHUB_OUTPUT
+        echo "$RELEASE_NOTES" >> $GITHUB_OUTPUT
+        echo "EOF" >> $GITHUB_OUTPUT
+
     - name: Create Release
       uses: softprops/action-gh-release@v1
       with:
         files: DiskProtectorApp/bin/Release/net8.0-windows/win-x64/publish/DiskProtectorApp.exe
         body: |
-          🛡️ Disk Protector App - Release Automático
+          🛡️ Disk Protector App - Versión ${{ github.ref_name }}
           
-          ## Características:
-          - ✅ Protección contra escritura accidental
-          - ✅ Detección automática de unidad del sistema
-          - ✅ Interfaz intuitiva con colores e iconos
-          - ✅ Verificación de permisos de administrador
+          ## 📝 Cambios en esta versión:
+          ${{ steps.get_release_notes.outputs.RELEASE_NOTES }}
           
-          ## Instrucciones:
-          1. Ejecutar como Administrador
+          ## 🚀 Instrucciones:
+          1. **Ejecutar como Administrador** (clic derecho → "Ejecutar como administrador")
           2. Seleccionar unidades a proteger/desproteger
-          3. La unidad del sistema aparece en amarillo (no modificable)
+          3. La unidad del sistema aparece en amarillo y no puede modificarse
           
-          ⚠️ Siempre ejecutar como Administrador
+          ⚠️ **IMPORTANTE:** Siempre ejecutar como Administrador
         draft: false
         prerelease: false
       env:
